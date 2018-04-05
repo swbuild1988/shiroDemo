@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>success</title>
+</head>
+<body>
+登陆成功
+<button id="logout" onclick="logout()">登出</button>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script type="application/javascript">
+
+    function logout(){
+
+        $.ajax({
+            type: "get",
+            url: "/login/logout",
+            success:function(data) {
+                console.log("success", data)
+                window.location.href = "/" + data;
+            },
+            error:function(data){
+                console.log("error", data)
+            }
+        });
+    }
+
+</script>
+</body>
+</html>
